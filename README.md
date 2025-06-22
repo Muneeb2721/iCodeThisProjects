@@ -44,7 +44,7 @@ Let’s collaborate and grow together.
 ---
 
 ## 🔗 Connect with Me  
-[![LinkedIn – Muneeb Nadeem](https://img.shields.io/badge/LinkedIn--blue?style=social&logo=linkedin)](https://www.linkedin.com/in/muneeb-nadeem)
+[![LinkedIn – Muneeb Nadeem](https://img.shields.io/badge/LinkedIn--blue?style=social&logo=linkedin)](https://www.linkedin.com/in/muneebnadeem?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ---
 
