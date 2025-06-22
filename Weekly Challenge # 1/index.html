@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in using password page." />
+  <meta name="author" content="Muneeb N. Frontend Developer" />
+  <meta name="robots" content="index, follow" />
+  <title>Password Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="aquaColorBackground">
+    <div class="passwordContainer">
+      <h1>Enter your password</h1>
+
+      <div class="profile">
+        <img src="image.png" alt="User  Profile" width="40" height="50" />
+        <p>
+          <span>Business Account</span>
+          <span>Sarah Bills</span>
+        </p>
+      </div>
+
+      
+    <div class="field password-field">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+              <span class="lock-icon">🔒</span>
+              <input type="password" name="password" id="password" />
+            </div>
+            <span class="toggle-password" id="togglePassword">👁️</span>
+    </div>
+
+      <div class="checkbox">
+        <div class="toggle-wrapper">
+          <label class="toggle-switch">
+            <input type="checkbox" id="mode-toggle" />
+            <span class="slider">
+              <span class="label label-left">Off</span>
+              <span class="label label-right">On</span>
+            </span>
+          </label>
+        </div>
+        <span>Stay signed in </span>
+        <a href="#">Continue</a>
+      </div>
+
+      <a href="#" class="reset">Reset password</a>
+    </div>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const toggle = document.getElementById('mode-toggle');
+    const togglePassword = document.getElementById('togglePassword');
+  
+    // Toggle background/business mode
+    toggle.addEventListener('change', () => {
+      passwordInput.type = toggle.checked ? 'text' : 'password';
+    });
+  
+    // Password input focus effects (optional UX)
+    passwordInput.addEventListener('focus', () => {
+      passwordInput.classList.add('focus');
+    });
+  
+    passwordInput.addEventListener('blur', () => {
+      if (passwordInput.value === '') {
+        passwordInput.classList.remove('focus');
+      }
+    });
+  
+    // 👁️ Toggle visibility by clicking eye icon
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+      togglePassword.textContent = isPassword ? '🙈' : '👁️';
+    });
+  </script>
+  
+
+</body>
+</html>

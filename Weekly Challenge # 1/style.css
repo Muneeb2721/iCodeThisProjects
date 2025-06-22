@@ -1,0 +1,375 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+/* Main Container */
+.aquaColorBackground {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8) 0%, rgba(100, 255, 255, 0.6) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 150, 200, 0.2);
+    animation: fadeIn 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    transition: all 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.aquaColorBackground:hover {
+    box-shadow: 0 15px 35px rgba(0, 150, 200, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Password Container */
+.passwordContainer {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.passwordContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    animation: rainbow 8s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Header */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 3px;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(240, 248, 255, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.profile:hover {
+    background: rgba(240, 248, 255, 0.8);
+    transform: translateX(5px);
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(76, 172, 254, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile:hover img {
+    transform: rotate(5deg) scale(1.05);
+    border-color: rgba(76, 172, 254, 0.6);
+}
+
+.profile p {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #333;
+}
+
+.profile p span:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Password Field */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.field label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.field input {
+    padding: 12px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.field input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(76, 172, 254, 0.2);
+    background-color: white;
+    outline: none;
+}
+
+.password-field .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-wrapper input {
+    width: 86%;
+    padding: 10px 40px 10px 35px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .lock-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #666;
+    pointer-events: none;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 39px;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+
+/* Checkbox Section */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.checkbox span {
+    font-size: 14px;
+    color: #555;
+}
+
+.checkbox a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #4facfe;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: rgba(76, 172, 254, 0.1);
+}
+
+.checkbox a:hover {
+    background: rgba(76, 172, 254, 0.2);
+    color: #3a8fd9;
+    transform: translateY(-2px);
+}
+
+/* Reset Password Link */
+.reset {
+    font-size: 14px;
+    color: #ff6b6b;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.reset:hover {
+    color: #ff4757;
+    transform: translateY(-1px);
+}
+
+/* Toggle Switch */
+.toggle-wrapper {
+    position: relative;
+    top: -20px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 36px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    padding: 0 12px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider:hover {
+    transform: scale(1.05);
+}
+
+.label {
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
+input:checked + .slider .label-left {
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateX(-5px);
+}
+
+input:checked + .slider .label-right {
+    color: white;
+    transform: translateX(5px);
+}
+
+input:checked + .slider::before {
+    transform: translateX(54px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .aquaColorBackground {
+        padding: 25px;
+        width: 95%;
+    }
+    
+    .passwordContainer {
+        width: 100%;
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    .checkbox {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .checkbox a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.passwordContainer {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
