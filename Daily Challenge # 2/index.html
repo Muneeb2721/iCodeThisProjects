@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Modern messaging interface with animations and interactivity."/>
+    <meta name="author" content="Muneeb N. Frontend Developer" />
+    <meta name="robots" content="index, follow" />
+    <title>Nexus Chat - New Messages</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="lightBackground">
+      <div class="messageBackground">
+        <div class="heading">
+          <h3>New Messages</h3>
+          <div class="close-btn" onclick="closeApp()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="currentColor"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="searchBar">
+          <input
+            type="text"
+            placeholder="Search contacts..."
+            id="searchInput"
+            oninput="searchContacts()"
+          />
+          <label for="searchInput">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 512 512"
+              width="24px"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+              />
+            </svg>
+          </label>
+        </div>
+
+        <div class="contacts">
+          <h4>Recent Conversations</h4>
+          <div class="contact-item" onclick="toggleContact(this)">
+            <div class="avatar">AS</div>
+            <div class="name">
+              <p>Ahsan Arshad</p>
+              <p>@ahsan-12 • Online</p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" />
+            </div>
+          </div>
+          <div class="contact-item" onclick="toggleContact(this)">
+            <div class="avatar">FA</div>
+            <div class="name">
+              <p>Farhan Arshad</p>
+              <p>@farhan-12 • 2m ago</p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" />
+            </div>
+          </div>
+          <div class="contact-item" onclick="toggleContact(this)">
+            <div class="avatar">UA</div>
+            <div class="name">
+              <p>Usama Ali</p>
+              <p>@ali-dam-12 • 1h ago</p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" />
+            </div>
+          </div>
+          <div class="contact-item" onclick="toggleContact(this)">
+            <div class="avatar">AA</div>
+            <div class="name">
+              <p>Adeel Ansari</p>
+              <p>@ansari.com-12 • 3h ago</p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" />
+            </div>
+          </div>
+          <div class="contact-item" onclick="toggleContact(this)">
+            <div class="avatar">SM</div>
+            <div class="name">
+              <p>Sarah Miller</p>
+              <p>@sarah.design • Online</p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-secondary" onclick="cancelSelection()">
+            Cancel
+          </button>
+          <button
+            class="btn btn-primary"
+            onclick="forwardMessage()"
+            id="forwardBtn"
+          >
+            Forward Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selected-count" id="selectedCount">0 contacts selected</div>
+
+    <script>
+      let selectedContacts = new Set();
+
+      function toggleContact(element) {
+        const checkbox = element.querySelector('input[type="checkbox"]');
+        const contactName = element.querySelector(
+          ".name p:first-child"
+        ).textContent;
+
+        if (element.classList.contains("selected")) {
+          element.classList.remove("selected");
+          checkbox.checked = false;
+          selectedContacts.delete(contactName);
+        } else {
+          element.classList.add("selected");
+          checkbox.checked = true;
+          selectedContacts.add(contactName);
+        }
+
+        updateSelectedCount();
+        updateForwardButton();
+      }
+
+      function updateSelectedCount() {
+        const countElement = document.getElementById("selectedCount");
+        const count = selectedContacts.size;
+
+        countElement.textContent = `${count} contact${
+          count !== 1 ? "s" : ""
+        } selected`;
+
+        if (count > 0) {
+          countElement.classList.add("show");
+        } else {
+          countElement.classList.remove("show");
+        }
+      }
+
+      function updateForwardButton() {
+        const forwardBtn = document.getElementById("forwardBtn");
+        const count = selectedContacts.size;
+
+        if (count > 0) {
+          forwardBtn.textContent = `Forward to ${count} contact${
+            count !== 1 ? "s" : ""
+          }`;
+          forwardBtn.style.background =
+            "linear-gradient(135deg, #22c55e, #16a34a)";
+        } else {
+          forwardBtn.textContent = "Forward Message";
+          forwardBtn.style.background =
+            "linear-gradient(135deg, #4facfe, #00f2fe)";
+        }
+      }
+
+      function searchContacts() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const contacts = document.querySelectorAll(".contact-item");
+
+        contacts.forEach((contact) => {
+          const name = contact
+            .querySelector(".name p:first-child")
+            .textContent.toLowerCase();
+          const username = contact
+            .querySelector(".name p:last-child")
+            .textContent.toLowerCase();
+
+          if (name.includes(searchTerm) || username.includes(searchTerm)) {
+            contact.style.display = "flex";
+            contact.style.animation = "fadeInUp 0.3s ease-out";
+          } else {
+            contact.style.display = "none";
+          }
+        });
+      }
+
+      function cancelSelection() {
+        selectedContacts.clear();
+        document.querySelectorAll(".contact-item").forEach((item) => {
+          item.classList.remove("selected");
+          item.querySelector('input[type="checkbox"]').checked = false;
+        });
+        updateSelectedCount();
+        updateForwardButton();
+      }
+
+      function forwardMessage() {
+        if (selectedContacts.size === 0) {
+          alert("Please select at least one contact to forward the message.");
+          return;
+        }
+
+        const contactNames = Array.from(selectedContacts).join(", ");
+
+        // Create a success animation
+        const messageBackground = document.querySelector(".messageBackground");
+        messageBackground.style.transform = "scale(0.95)";
+        messageBackground.style.opacity = "0.8";
+
+        setTimeout(() => {
+          alert(`Message forwarded successfully to: ${contactNames}`);
+          messageBackground.style.transform = "scale(1)";
+          messageBackground.style.opacity = "1";
+          cancelSelection();
+        }, 200);
+      }
+
+      function closeApp() {
+        const lightBackground = document.querySelector(".lightBackground");
+        lightBackground.style.animation = "slideOut 0.5s ease-in forwards";
+
+        setTimeout(() => {
+          alert("Closing messaging app...");
+          // In a real app, this would navigate away or close the modal
+        }, 500);
+      }
+
+      // Add slide out animation
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes slideOut {
+                to {
+                    opacity: 0;
+                    transform: translateY(50px) scale(0.9);
+                }
+            }
+        `;
+      document.head.appendChild(style);
+
+      // Add some interaction feedback
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add click sound effect simulation
+        document.addEventListener("click", function (e) {
+          if (e.target.closest(".contact-item, .btn, .close-btn")) {
+            // Create a subtle haptic feedback simulation
+            if (navigator.vibrate) {
+              navigator.vibrate(50);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
