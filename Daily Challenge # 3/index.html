@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind Local</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            screens: {
+              xs: "375px",
+            },         
+          },
+        },
+      },
+    };
+    
+  </script>
+</head>
+<body class="bg-[#787f8b]">
+  <div class="main w-[35%] lg:w-[40%] md:w-[45%] sm:w-[65%] xs:w-[70%] bg-white mx-auto my-10 p-5 rounded-lg shadow-lg">
+    <div class="heart flex justify-center mt-8 mb-8">
+      <img class="w-16 h-16" src="heart.png" alt="Heart">
+    </div>
+
+    <div class="cta text-center mx-[36px]">
+      <h3 class="font-bold text-[22px] mt-4">Unlock to see more like source</h3>
+      <p class="text-[18px] mt-4">Upgrade to see who liked your shots in the last 90 days.</p>
+      <a href="#" class="bg-blue-500 text-white py-2 px-9 rounded mt-12 inline-block">Try Free</a>
+    </div>
+
+    <div class="hr border-t border-gray-300 my-12"></div>
+
+    <div class="views flex mt-12">
+      <div class="celebrate">
+        <img class="w-60 h-28" src="celebrate-icon.png" alt="celebrate" >
+      </div>
+      <div class="text flex flex-col justify-center ml-4  ">
+        <h3 class="font-bold text-[22px]">Profile views matter</h3>
+        <p class="text-[18px] mt-8">
+          Getting more profile views can help you get found for the right opportunity
+        </p>
+        <p class="text-gray-500 text-[16px] mt-4">
+          Update your profile with the latest information so people can find you in searches
+        </p>
+        <p class="text-gray-500 text-[16px] mt-4">
+          Connect with people to grow your network and get found for more opportunities
+        </p>
+        <p class="text-gray-500 text-[16px] mt-4 mb-4">
+          Engage with your feed to be visible to people that matter most to your career
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
