@@ -19,7 +19,7 @@ function About() {
                     xl:px-[64px]
                     lg:px-[54px]
                     sm:w-[300px] sm:h-[300px] ">
-                    <img src="src\assets\profile.png" alt="" />
+                    <img src="src/assets/profile.png" alt="" />
                 </div>
                 
                 <div className="about-text text-[1.1rem] text-[#475569]
