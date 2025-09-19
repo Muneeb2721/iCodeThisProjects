@@ -1,3 +1,5 @@
+import profile from '../assets/profile.png';
+
 function About() {
     return (
         <div className="bg-white flex flex-col gap-16 mb-20">
@@ -19,7 +21,7 @@ function About() {
                     xl:px-[64px]
                     lg:px-[54px]
                     sm:w-[300px] sm:h-[300px] ">
-                    <img src="src/assets/profile.png" alt="" />
+                    <img src={profile} alt="" />
                 </div>
                 
                 <div className="about-text text-[1.1rem] text-[#475569]
