@@ -1,0 +1,326 @@
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hr {
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+.image-container {
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+}
+
+.skill-category:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(-4px);
+}
+
+.project-category:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(-4px);
+}
+
+.icon-div {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.project-card {
+    background: #f8fafc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.carousel-wrapper {
+  position: relative;
+  padding: 0 50px; /* space for arrows */
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.custom-arrow.left {
+  left: 0;  /* outside left */
+}
+
+.custom-arrow.right {
+  right: 0; /* outside right */
+}
+
+.contact-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);   
+    color: white;
+    text-align: center;
+}
+
+.contact-link {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.contact-list {
+    margin-bottom: 40px;
+}
+
+#overlay {
+    z-index: 1;
+}
+
+@media screen and (min-width:0px) and (max-width:767px) {
+    .menu {
+        visibility: hidden;
+        width: 300px;
+        height: 100%;
+        background-color: rgb(17, 24, 39, 1);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-right: 0px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        font-weight: 900;
+        z-index: 50;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    .about-text {
+        padding: 0 50px;
+    }
+
+    .about-text h2 {
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 250px;
+        height: 250px;
+        font-size: 5rem;
+    }
+
+    .skill-container {
+        padding: 0 30px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .menu {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        padding: 0 20px;
+    }
+
+    .image-container {
+        width: 150px;
+        height: 150px;
+        font-size: 5rem;
+    }
+
+    .about-head {
+        font-size: 1.5rem;
+    }
+
+    .about-text {
+        padding: 0 0px;
+    }
+    .about-text h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto 3rem auto;
+    }
+
+    .skill-head {
+        font-size: 1.5rem;
+    }
+
+    .project-head {
+        font-size: 1.5rem;
+    }
+
+    .skill-container {
+        padding: 0 15px;
+    }
+
+    .project-container {
+        padding: 0 15px;
+    }
+
+    .languages {
+        /* flex-direction: column; */
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .skill-category {
+        padding: 1rem 1rem;
+    }
+
+    .skill-category-head {
+        font-size: 1rem;
+    }
+
+    .skill-icon {
+        margin-right: 0.5rem;
+        padding: 0 8px;
+    }
+
+    .skill-subhead {
+        font-size: 1rem;;
+    }
+
+    .project-category {
+        padding: 1rem 1rem;
+    }
+
+    .project-category-head {
+        font-size: 1rem;
+    }
+
+    .project-icon {
+        margin-right: 0.5rem;
+        padding: 0 8px;
+    }
+
+    .project-subhead {
+        font-size: 1rem;;
+    }
+
+    .contact-list {
+        margin-bottom: 15px;
+    }
+    
+    .contact-head {
+        font-size: 1.5rem;
+    }
+
+    .contact-head-line {
+        font-size: .8rem;
+        font-weight: 400;
+    }   
+
+    .contact-link {
+        background-color: transparent; 
+        flex-direction: column;
+        padding: 0rem 0rem;
+    }
+
+    .contact-link-para {
+        font-size: .91rem;
+        border-radius: 50px;
+        background-color: rgba(255,255,255,0.1);
+        padding: 1rem 1rem;
+        backdrop-filter: blur(10px);
+
+    }
+}
+
+@media screen and (min-width:313px) and (max-width:435px) {
+    .contact-list {
+        margin-bottom: 10px;
+    }
+    
+    .contact-head {
+        font-size: 2rem;
+    }
+
+    .contact-head-line {
+        font-size: 1rem;
+    }   
+
+    .contact-link {
+        background-color: transparent; 
+        flex-direction: column;
+        padding: 0 0;
+    }
+
+    .contact-link-para {
+        font-size: 1rem;
+        border-radius: 50px;
+        background-color: rgba(255,255,255,0.1);
+        padding: 1rem 2rem;
+        backdrop-filter: blur(10px);
+
+    }
+
+
+}
+
+@media screen and (max-width:191px) {
+    .skill-div {
+        flex-direction: column;
+    }
+
+    .project-div {
+        flex-direction: column;
+    }
+
+    .languages {
+        flex-direction: column;
+    }
+
+    .skill-subhead {
+        text-align: center;
+    }
+
+    .project-subhead {
+        text-align: center;
+    }
+}
+

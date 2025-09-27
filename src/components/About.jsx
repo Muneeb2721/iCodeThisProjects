@@ -2,7 +2,7 @@ import profile from '../assets/profile.png';
 
 function About() {
     return (
-        <div className="bg-white flex flex-col gap-16 mb-20">
+        <div id="about" className="bg-white flex flex-col gap-16 mb-20">
             
             <div className=" text-center w-fit mx-auto mt-20">
                 <h1 className="about-head text-[2.5rem] font-[700] text-[#1e293b]">
@@ -18,10 +18,11 @@ function About() {
                 
                 <div className="image-container rounded-[20px]
                     flex items-center justify-center text-[#4f46e5] mx-auto
-                    xl:px-[64px]
-                    lg:px-[54px]
-                    sm:w-[300px] sm:h-[300px] ">
-                    <img src={profile} alt="" />
+                    lg:w-[900px]
+                    md:w-[300px]
+                    sm:w-[900px]
+                    ">
+                    <img src={profile} alt="Profile Image" className="w-[900px] rounded-[20px]" />
                 </div>
                 
                 <div className="about-text text-[1.1rem] text-[#475569]
